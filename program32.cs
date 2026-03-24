@@ -34,6 +34,7 @@ class Account
 
     public virtual void Display()
     {
+        Console.WriteLine("\nAccount Details");
         Console.WriteLine("Account Number: " + accountNumber);
         Console.WriteLine("Balance: " + balance);
     }
@@ -109,8 +110,13 @@ class Program
 {
     static void Main(string[] args)
     {
+        Account a = new Account(100, 3000);
         SavingsAccount s = new SavingsAccount(101, 5000, 5);
         CurrentAccount c = new CurrentAccount(102, 8000, 2000);
+
+        a.Display();
+        a.Deposit(500);
+        a.Withdraw(1000);
 
         s.Display();
         s.Deposit(1000);
